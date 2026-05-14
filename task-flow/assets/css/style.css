@@ -1,0 +1,336 @@
+/* --- Layout --- */
+body { display: block; background: #f0f2f5; }
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 240px;
+    background: #1e293b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #60a5fa;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #2563eb;
+    color: #fff;
+}
+
+.sidebar-footer {
+    margin-top: 600px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid #334155;
+    padding-top: 1rem;
+}
+
+.sidebar-footer span {
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.sidebar-footer a {
+    color: #f87171;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.sidebar-footer a:hover {
+    color: #fca5a5;
+}
+
+/* --- Main --- */
+.main {
+    margin-left: 240px;
+    padding: 2rem;
+    flex: 1;
+}
+
+/* --- Card --- */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.task-count {
+    background: #2563eb;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+/* --- Add Task Form --- */
+.task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.task-form input[type="text"] { flex: 2; min-width: 200px; }
+.task-form select              { flex: 1; min-width: 120px; }
+.task-form input[type="date"]  { flex: 1; min-width: 140px; }
+
+.task-form input,
+.task-form select {
+    padding: 0.65rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.task-form input:focus,
+.task-form select:focus { border-color: #2563eb; }
+
+.task-form button {
+    padding: 0.65rem 1.5rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.task-form button:hover { background: #1d4ed8; }
+
+/* --- Task List --- */
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.task-item:hover  { background: #f8fafc; }
+.task-item.done   { opacity: 0.6; }
+.task-item.done .task-title { text-decoration: line-through; color: #94a3b8; }
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.task-info { display: flex; flex-direction: column; gap: 0.3rem; }
+.task-title { font-size: 0.95rem; font-weight: 500; color: #1e293b; }
+
+.task-meta { display: flex; align-items: center; gap: 0.5rem; }
+
+/* Priority badges */
+.badge {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.badge.low    { background: #dcfce7; color: #15803d; }
+.badge.medium { background: #fef9c3; color: #a16207; }
+.badge.high   { background: #fee2e2; color: #b91c1c; }
+
+.due { font-size: 0.8rem; color: #64748b; }
+
+/* Task action buttons */
+.task-actions { display: flex; gap: 0.5rem; align-items: center; }
+
+.btn-check {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.btn-edit {
+    background: #f1f5f9;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    transition: background 0.2s;
+}
+
+.btn-edit:hover { background: #e2e8f0; }
+
+.btn-delete {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover { background: #fecaca; }
+
+.empty { color: #94a3b8; font-size: 0.9rem; text-align: center; padding: 2rem 0; }
+
+/* --- Edit Modal --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.modal h3 { margin-bottom: 1rem; color: #1e293b; }
+
+.modal input,
+.modal select {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.modal input:focus,
+.modal select:focus { border-color: #2563eb; }
+
+.modal-buttons { display: flex; gap: 0.75rem; }
+
+.modal-buttons button:first-child {
+    flex: 1;
+    padding: 0.65rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.modal-buttons button:last-child {
+    padding: 0.65rem 1rem;
+    background: #f1f5f9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* --- Search Bar --- */
+.search-bar {
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: border 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: #2563eb;
+}
+
+/* --- Toast Notifications --- */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1e293b;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.error {
+    background: #b91c1c;
+}
